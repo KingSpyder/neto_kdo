@@ -1,6 +1,6 @@
-# Une petite histoire photo
+# Remote KDO opener
 
-Page statique mobile-first, sans dépendance ni étape de compilation. Les photos optimisées et redressées sont dans `photos/` ; les originaux restent dans le dossier source.
+Page statique mobile-first, sans dépendance ni étape de compilation. Faites glisser la peluche, puis balayez pour zoomer progressivement entre les photos. Les photos optimisées et redressées sont dans `photos/` ; les originaux restent dans le dossier source.
 
 ## Tester en local
 

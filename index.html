@@ -4,37 +4,62 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#171426">
-    <meta name="description" content="Une petite histoire photo à découvrir du bout des doigts.">
-    <title>Un cadeau pour toi</title>
+    <meta name="description" content="Remote KDO opener — une expérience photo interactive à découvrir du bout des doigts.">
+    <title>Remote KDO opener</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
   </head>
   <body>
     <main class="experience">
       <header class="intro">
-        <p class="eyebrow">Une petite histoire à découvrir</p>
-        <h1 id="story-title">Un cadeau pour toi</h1>
+        <h1 id="story-title">Remote KDO opener</h1>
       </header>
 
       <section class="story" aria-labelledby="story-title">
         <div class="scene-shell">
+          <svg class="gift-library" aria-hidden="true">
+            <symbol id="gift-artwork" viewBox="0 0 48 52">
+              <path class="gift-bow" d="M22 15C9 17 8 3 17 4c4 0 6 6 7 11 1-5 3-11 7-11 9-1 8 13-5 11"/>
+              <rect class="gift-lid" x="3" y="14" width="42" height="9" rx="3"/>
+              <rect class="gift-box" x="6" y="21" width="36" height="28" rx="3"/>
+              <path class="gift-ribbon" d="M24 14v34"/>
+            </symbol>
+          </svg>
           <div class="floating-gifts" id="floating-gifts" aria-hidden="true">
-            <span class="gift gift-one"><span></span></span>
-            <span class="gift gift-two"><span></span></span>
-            <span class="gift gift-three"><span></span></span>
-            <span class="gift gift-four"><span></span></span>
+            <span class="gift gift-one">
+              <svg class="gift-art" viewBox="0 0 48 52">
+                <use href="#gift-artwork"/>
+              </svg>
+            </span>
+            <span class="gift gift-two">
+              <svg class="gift-art" viewBox="0 0 48 52">
+                <use href="#gift-artwork"/>
+              </svg>
+            </span>
+            <span class="gift gift-three">
+              <svg class="gift-art" viewBox="0 0 48 52">
+                <use href="#gift-artwork"/>
+              </svg>
+            </span>
+            <span class="gift gift-four">
+              <svg class="gift-art" viewBox="0 0 48 52">
+                <use href="#gift-artwork"/>
+              </svg>
+            </span>
           </div>
 
           <div class="stage" id="stage" data-step="1" role="group" tabindex="0" aria-label="Photo 1 sur 4">
             <img class="photo photo-two is-current" id="photo-two" src="photos/2.jpg" alt="La peluche dragon parmi les autres cadeaux" draggable="false">
-            <img class="photo" id="photo-three" src="photos/3.jpg" alt="Un gros plan sur la peluche dragon et les cadeaux" loading="lazy" decoding="async" draggable="false">
-            <img class="photo" id="photo-four" src="photos/4.jpg" alt="Le dernier cadeau, un coffret Warhammer" loading="lazy" decoding="async" draggable="false">
+            <img class="photo" id="photo-three" src="photos/3.jpg" alt="Un gros plan sur la peluche dragon et les cadeaux" decoding="async" draggable="false">
+            <img class="photo" id="photo-four" src="photos/4.jpg" alt="Le dernier cadeau, un coffret Warhammer" decoding="async" draggable="false">
 
             <svg class="first-scene" id="first-scene" viewBox="0 0 1500 2000" preserveAspectRatio="none" role="group" aria-label="Photo 1 : fais glisser la grande peluche jaune">
               <defs>
-                <path id="plush-outline" d="M 490,-8
-                  C 506,43 516,139 540,191
-                  C 505,195 459,202 420,221
+                <path id="plush-outline" d="M 478,-8
+                  C 495,4 496,39 497,71
+                  C 498,116 511,164 532,190
+                  C 540,199 551,204 566,207
+                  C 521,207 470,208 420,224
                   C 357,253 323,314 288,382
                   C 254,460 235,559 225,660
                   C 208,850 205,1018 207,1164
@@ -56,7 +81,8 @@
                   C 923,205 892,193 853,190
                   C 809,190 778,198 743,195
                   C 685,196 631,203 580,196
-                  C 540,192 514,181 490,165 Z"/>
+                  C 548,190 529,170 507,140
+                  C 473,94 433,39 402,-8 Z"/>
                 <mask id="scene-hole" maskUnits="userSpaceOnUse" x="0" y="0" width="1500" height="2000" style="mask-type:luminance">
                   <rect width="1500" height="2000" fill="white"/>
                   <use href="#plush-outline" fill="black"/>
@@ -66,7 +92,7 @@
                 </clipPath>
               </defs>
 
-              <image href="photos/1.jpg" width="1500" height="2000" mask="url(#scene-hole)"/>
+              <image class="scene-background" id="scene-background" href="photos/1.jpg" width="1500" height="2000" mask="url(#scene-hole)"/>
               <g class="plush-layer" id="plush-layer" transform="translate(0 0)" role="button" tabindex="0" aria-label="Faire glisser la grande peluche pour découvrir la photo suivante">
                 <image class="plush-image" href="photos/1.jpg" width="1500" height="2000" clip-path="url(#plush-clip)"/>
                 <use class="plush-hit-area" href="#plush-outline"/>
