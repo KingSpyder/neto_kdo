@@ -405,5 +405,4 @@ stage.addEventListener("keydown", (event) => {
 
 previousButton.addEventListener("click", () => goToPhoto(currentStep - 1));
 nextButton.addEventListener("click", () => goToPhoto(currentStep + 1));
-
 updateProgress();
