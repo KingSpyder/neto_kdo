@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#171426">
+    <meta name="description" content="Une petite histoire photo à découvrir du bout des doigts.">
+    <title>Un cadeau pour toi</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="experience">
+      <header class="intro">
+        <p class="eyebrow">Une petite histoire à découvrir</p>
+        <h1 id="story-title">Un cadeau pour toi</h1>
+      </header>
+
+      <section class="story" aria-labelledby="story-title">
+        <div class="scene-shell">
+          <div class="floating-gifts" id="floating-gifts" aria-hidden="true">
+            <span class="gift gift-one"><span></span></span>
+            <span class="gift gift-two"><span></span></span>
+            <span class="gift gift-three"><span></span></span>
+            <span class="gift gift-four"><span></span></span>
+          </div>
+
+          <div class="stage" id="stage" data-step="1" role="group" tabindex="0" aria-label="Photo 1 sur 4">
+            <img class="photo photo-two is-current" id="photo-two" src="photos/2.jpg" alt="La peluche dragon parmi les autres cadeaux" draggable="false">
+            <img class="photo" id="photo-three" src="photos/3.jpg" alt="Un gros plan sur la peluche dragon et les cadeaux" loading="lazy" decoding="async" draggable="false">
+            <img class="photo" id="photo-four" src="photos/4.jpg" alt="Le dernier cadeau, un coffret Warhammer" loading="lazy" decoding="async" draggable="false">
+
+            <svg class="first-scene" id="first-scene" viewBox="0 0 1500 2000" preserveAspectRatio="none" role="group" aria-label="Photo 1 : fais glisser la grande peluche jaune">
+              <defs>
+                <path id="plush-outline" d="M 490,-8
+                  C 506,43 516,139 540,191
+                  C 505,195 459,202 420,221
+                  C 357,253 323,314 288,382
+                  C 254,460 235,559 225,660
+                  C 208,850 205,1018 207,1164
+                  C 210,1292 229,1416 268,1485
+                  C 304,1543 353,1562 424,1560
+                  C 500,1562 582,1556 650,1557
+                  C 808,1564 927,1560 1023,1558
+                  C 1093,1557 1152,1516 1174,1447
+                  C 1194,1380 1197,1282 1197,1195
+                  C 1201,1089 1202,953 1198,837
+                  C 1194,761 1199,698 1213,650
+                  C 1235,592 1212,497 1191,424
+                  C 1174,364 1179,327 1219,296
+                  C 1262,266 1325,249 1347,219
+                  C 1359,202 1345,188 1322,186
+                  C 1270,181 1222,205 1188,209
+                  C 1151,213 1118,204 1081,190
+                  C 1041,200 1004,207 968,205
+                  C 923,205 892,193 853,190
+                  C 809,190 778,198 743,195
+                  C 685,196 631,203 580,196
+                  C 540,192 514,181 490,165 Z"/>
+                <mask id="scene-hole" maskUnits="userSpaceOnUse" x="0" y="0" width="1500" height="2000" style="mask-type:luminance">
+                  <rect width="1500" height="2000" fill="white"/>
+                  <use href="#plush-outline" fill="black"/>
+                </mask>
+                <clipPath id="plush-clip" clipPathUnits="userSpaceOnUse">
+                  <use href="#plush-outline"/>
+                </clipPath>
+              </defs>
+
+              <image href="photos/1.jpg" width="1500" height="2000" mask="url(#scene-hole)"/>
+              <g class="plush-layer" id="plush-layer" transform="translate(0 0)" role="button" tabindex="0" aria-label="Faire glisser la grande peluche pour découvrir la photo suivante">
+                <image class="plush-image" href="photos/1.jpg" width="1500" height="2000" clip-path="url(#plush-clip)"/>
+                <use class="plush-hit-area" href="#plush-outline"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+
+        <p class="hint" id="hint" aria-live="polite" aria-atomic="true">Fais glisser la grande peluche pour découvrir la suite.</p>
+
+        <nav class="controls" id="controls" aria-label="Navigation dans les photos" hidden>
+          <button class="nav-button" id="previous" type="button" aria-label="Photo précédente">
+            <span aria-hidden="true">←</span>
+          </button>
+          <ol class="progress" id="progress" aria-label="Progression">
+            <li class="is-current" aria-label="Photo 1"></li>
+            <li aria-label="Photo 2"></li>
+            <li aria-label="Photo 3"></li>
+            <li aria-label="Photo 4"></li>
+          </ol>
+          <button class="nav-button" id="next" type="button" aria-label="Photo suivante">
+            <span aria-hidden="true">→</span>
+          </button>
+        </nav>
+      </section>
+    </main>
+  </body>
+</html>
